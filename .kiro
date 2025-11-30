@@ -1,0 +1,76 @@
+# Product Overview
+
+QR Code Generator - A simple web application that generates QR codes from user-provided URLs. Users can enter any URL, generate a corresponding QR code, and download it as a PNG image.
+
+## Key Features
+- URL to QR code conversion
+- Real-time QR code generation
+- Download QR codes as PNG images
+- Clean, responsive UI with gradient design
+
+# Project Structure
+
+This is a simple single-page application with a flat file structure.
+
+```
+.
+├── index.html      # Main HTML entry point
+├── script.js       # Client-side JavaScript logic
+├── style.css       # All styling and visual design
+└── server.py       # Python development server
+```
+
+## File Responsibilities
+
+- **index.html** - Page structure, external dependencies (QRCode.js CDN), script loading order
+- **script.js** - QR code generation logic, event handling, download functionality
+- **style.css** - Complete styling including layout, colors, responsive design, and animations
+- **server.py** - Local HTTP server for development (Python's built-in http.server)
+
+## Architecture Pattern
+
+Simple client-side application with no build process:
+- No bundler or transpiler
+- Direct file serving via Python HTTP server
+- External libraries loaded via CDN
+- All logic contained in single files per concern
+
+# Technology Stack
+
+## Frontend
+- **HTML5** - Semantic markup
+- **CSS3** - Styling with gradients, flexbox, and transitions
+- **Vanilla JavaScript** - No framework, DOM manipulation
+- **QRCode.js** - External library via CDN (v1.0.0) for QR code generation
+
+## Backend
+- **Python 3** - Simple HTTP server for local development
+
+## Development Server
+
+Start the local development server:
+```bash
+python3 server.py
+```
+
+The server runs on `http://localhost:8000` by default.
+
+## Code Style Conventions
+
+### JavaScript
+- Use `const` and `let` (no `var`)
+- camelCase for variables and functions
+- Event listeners attached via `addEventListener`
+- Clear previous state before generating new content
+
+### CSS
+- Universal reset with box-sizing
+- CSS custom properties could be used for colors
+- Flexbox for layout
+- Smooth transitions for interactive elements
+- Mobile-first responsive design with padding
+
+### HTML
+- Semantic structure
+- External scripts loaded at end of body
+- CDN resources loaded before local scripts
